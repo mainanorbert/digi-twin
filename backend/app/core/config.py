@@ -13,6 +13,7 @@ class Settings(BaseSettings):
         openrouter_model: Model id, e.g. openai/gpt-4o-mini.
         openrouter_http_referer: Optional Referer header required by some providers.
         openrouter_x_title: Optional X-Title header for OpenRouter analytics.
+        cors_allowed_origins: Comma-separated frontend origins allowed to call the API.
     """
 
     model_config = SettingsConfigDict(
@@ -26,3 +27,17 @@ class Settings(BaseSettings):
     openrouter_model: str = "openai/gpt-4o-mini"
     openrouter_http_referer: str = "https://localhost"
     openrouter_x_title: str = "Digi-Twini API"
+    cors_allowed_origins: str = "http://localhost:3000,http://127.0.0.1:3000"
+
+    def cors_allowed_origins_list(self) -> list[str]:
+        """
+        Parse comma-separated CORS origins from the environment.
+
+        Returns:
+            Normalized non-empty origins.
+        """
+        return [
+            origin.strip().rstrip("/")
+            for origin in self.cors_allowed_origins.split(",")
+            if origin.strip()
+        ]

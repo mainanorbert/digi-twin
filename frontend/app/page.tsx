@@ -14,6 +14,13 @@ const SUGGESTED_PROMPTS = [
   "How do you approach mentoring or leading developers?",
 ];
 
+const API_BASE_URL = (
+  process.env.NEXT_PUBLIC_API_BASE_URL ??
+  (process.env.NODE_ENV === "development" ? "http://127.0.0.1:8000" : "")
+).replace(/\/$/, "");
+
+const CAREER_CHAT_STREAM_URL = `${API_BASE_URL}/api/v1/career/chat/stream`;
+
 export default function Home() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatTurn[]>([]);
@@ -49,7 +56,7 @@ export default function Home() {
     let assistant = "";
     try {
       await stream_chat_sse(
-        "/api/v1/career/chat/stream",
+        CAREER_CHAT_STREAM_URL,
         { message: trimmed, history: historySnapshot },
         signal,
         (delta) => {

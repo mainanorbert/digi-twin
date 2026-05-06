@@ -83,3 +83,4 @@ static/
 .python-version
 .vercel
 vercel.json
+!backend/vercel.json
