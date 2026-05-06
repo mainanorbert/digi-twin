@@ -11,7 +11,7 @@ type ChatTurn = { role: "user" | "assistant"; content: string };
 const SUGGESTED_PROMPTS = [
   "What's your strongest technical stack?",
   "Tell me about your AI and LLM work.",
-  "How do you approach mentoring or leading developers?",
+  "What are some of the AI projects you are proud of?",
 ];
 
 const API_BASE_URL = (
