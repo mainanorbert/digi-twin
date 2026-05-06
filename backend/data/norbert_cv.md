@@ -39,7 +39,7 @@ Additional training: **Andela – LLM Engineering (FDE)** – RAG, Agentic Frame
 
 - **Kibhoret:** Built a raw material management system for an oil production company with role-based dashboards. Users monitor and verify trucks from loading to offloading points in real-time. Developed with Django, Next.js, and TypeScript.
 
-- **Meridian Electronics Customer Support Chatbot:** MCP-powered chatbot that authenticates users and allows them to interact via chat interface for product availability checks, order history, and order placement. Improves customer experience with fast, accurate responses.
+- **Meridian Electronics Customer Support Chatbot:** LLM-powered chatbot using MCP to authenticate users and allows them to interact via chat interface for product availability checks, order history, and order placement. Improves customer experience with fast, accurate responses.
 
 - **Customer Support SaaS Platform:** AI-powered support platform for multi-tenant businesses. Enables companies to create custom agents with their own knowledge base to handle customer queries via chat, email, or WhatsApp interfaces.
 
