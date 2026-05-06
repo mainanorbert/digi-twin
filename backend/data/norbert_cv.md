@@ -7,7 +7,7 @@ Versatile Software Engineer and AI Engineer with strong experience in full-stack
 
 **Work History**
 
-**Software Engineer (LLM C Developer), Turing – California, USA (Remote), August 2024 – Present**  
+**Software Engineer (LLM C Developer), Turing – California, USA (Remote), August 2024 – January 2026**  
 Focused on improving model behavior in coding tasks using Python, SQL, and PostgreSQL environments. Enhanced LLMs’ contextual understanding, problem-solving, and decision-making abilities toward AGI objectives. Fine-tuned LLMs using Supervised Fine-Tuning (SFT) and Reinforcement Learning with Human Feedback (RLHF). Contributed to mentorship and AI research initiatives, fostering knowledge-sharing and innovation across engineering teams.  
 
 As **RLHF Agentic Reviewer – Apple Project**, reviewed and evaluated agentic conversation designs involving tool-augmented assistants simulating real-world tasks. Ensured high-quality notebook submissions by validating reasoning flow, tool integration, and output integrity. Simulated user-assistant interactions with corrective tool use.  
