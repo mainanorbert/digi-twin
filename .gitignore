@@ -18,6 +18,8 @@ eggs/
 .eggs/
 lib/
 lib64/
+!frontend/lib/
+!frontend/lib/**
 parts/
 sdist/
 var/
@@ -72,8 +74,12 @@ settings.local.py
 # OS files
 .DS_Store
 Thumbs.db
+*:Zone.Identifier
 
 # Logs / cache
 *.log
 .cache/
+static/
 .python-version
+.vercel
+vercel.json

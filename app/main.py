@@ -8,21 +8,27 @@ from fastapi.staticfiles import StaticFiles
 from app.routers import career
 
 
-def _static_dir() -> Path:
+def _static_dir() -> Path | None:
     """
-    Resolve the directory where the Next.js static export is stored.
+    Resolve the directory where the Next.js static export is stored, if present.
 
     Returns:
-        Absolute path to the ``static`` folder at the project root (next to ``app/``).
+        Absolute path to a static frontend build, or ``None`` when unavailable.
     """
-    return Path(__file__).resolve().parent.parent / "static"
+    project_root = Path(__file__).resolve().parent.parent
+    candidates = (
+        project_root / "static",
+        project_root / "frontend" / "out",
+    )
+    return next((path for path in candidates if path.is_dir()), None)
 
 
 def create_app() -> FastAPI:
     """
     Build the FastAPI application with routers and metadata.
 
-    When ``static/`` exists, static files and ``index.html`` are served from ``/``.
+    When a frontend static export exists, static files and ``index.html`` are
+    served from ``/``.
     Otherwise ``GET /`` returns API hints.
 
     Returns:
@@ -41,7 +47,7 @@ def create_app() -> FastAPI:
         return {"status": "ok"}
 
     static_path = _static_dir()
-    if static_path.is_dir():
+    if static_path is not None:
         application.mount(
             "/",
             StaticFiles(directory=str(static_path), html=True),
