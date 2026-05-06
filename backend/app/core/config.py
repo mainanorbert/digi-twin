@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     openrouter_model: str = "openai/gpt-4o-mini"
     openrouter_http_referer: str = "https://localhost"
     openrouter_x_title: str = "Digi-Twini API"
-    cors_allowed_origins: str = "http://localhost:3000,http://127.0.0.1:3000"
+    cors_allowed_origins: str = "http://localhost:3000,http://127.0.0.1:3000,https://digi-twin-3x3j.vercel.app/"
 
     def cors_allowed_origins_list(self) -> list[str]:
         """

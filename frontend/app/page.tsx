@@ -15,8 +15,10 @@ const SUGGESTED_PROMPTS = [
 ];
 
 const API_BASE_URL = (
-  process.env.NEXT_PUBLIC_API_BASE_URL ??
-  (process.env.NODE_ENV === "development" ? "http://127.0.0.1:8000" : "")
+  process.env.NODE_ENV === "development"
+    ? "http://127.0.0.1:8000"
+    : (process.env.NEXT_PUBLIC_API_BASE_URL ??
+        "https://digi-twin-five.vercel.app")
 ).replace(/\/$/, "");
 
 const CAREER_CHAT_STREAM_URL = `${API_BASE_URL}/api/v1/career/chat/stream`;
